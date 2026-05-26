@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 19th Birthday My Love 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+background:#050816;
+height:100vh;
+color:white;
+perspective:1200px;
+}
+
+/* Animated Background */
+
+.bg{
+position:absolute;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top left,#ff4da6 0%,transparent 25%),
+radial-gradient(circle at bottom right,#ff99cc 0%,transparent 30%),
+linear-gradient(135deg,#050816,#120026,#220033);
+overflow:hidden;
+}
+
+/* Stars */
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+from{
+opacity:0.2;
+transform:scale(0.6);
+}
+to{
+opacity:1;
+transform:scale(1.4);
+}
+}
+
+/* Floating Hearts */
+
+.heart{
+position:absolute;
+font-size:25px;
+animation:floatUp linear infinite;
+opacity:0.8;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(100vh) scale(0.5);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) scale(1.5) rotate(360deg);
+opacity:0;
+}
+}
+
+/* Main Container */
+
+.container{
+position:relative;
+z-index:10;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* 3D Card */
+
+.card{
+width:900px;
+height:560px;
+position:relative;
+transform-style:preserve-3d;
+transition:transform 1.5s;
+cursor:pointer;
+}
+
+.card.open{
+transform:rotateY(180deg);
+}
+
+/* Front */
+
+.front,
+.back{
+position:absolute;
+width:100%;
+height:100%;
+border-radius:35px;
+backface-visibility:hidden;
+overflow:hidden;
+box-shadow:0 0 50px rgba(255,105,180,0.5);
+}
+
+/* Front Design */
+
+.front{
+background:
+linear-gradient(145deg,#ff5fa2,#ff99cc,#ffd6ea);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.front::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(255,255,255,0.15);
+border-radius:50%;
+top:-120px;
+right:-120px;
+}
+
+.front h1{
+font-size:75px;
+font-family:'Great Vibes',cursive;
+color:white;
+text-shadow:0 0 20px #ff1493;
+animation:glow 2s infinite alternate;
+z-index:2;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px white;
+}
+to{
+text-shadow:0 0 30px #ff1493;
+}
+}
+
+.front p{
+font-size:24px;
+margin-top:20px;
+font-weight:600;
+z-index:2;
+}
+
+.open-btn{
+margin-top:40px;
+padding:18px 45px;
+border:none;
+border-radius:50px;
+background:white;
+color:#ff1493;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+transition:0.4s;
+z-index:2;
+}
+
+.open-btn:hover{
+transform:scale(1.1);
+background:#ff1493;
+color:white;
+}
+
+/* Back Side */
+
+.back{
+background:
+linear-gradient(135deg,#140022,#220033,#ff4da6);
+transform:rotateY(180deg);
+padding:35px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+/* Left */
+
+.left{
+width:50%;
+padding:20px;
+}
+
+.left h2{
+font-size:58px;
+font-family:'Great Vibes',cursive;
+margin-bottom:15px;
+color:#fff;
+}
+
+.left p{
+font-size:18px;
+line-height:1.9;
+color:#ffeef6;
+}
+
+/* Teddy */
+
+.teddy{
+font-size:130px;
+margin-top:25px;
+animation:bounce 2s infinite;
+filter:drop-shadow(0 0 20px pink);
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-15px);
+}
+}
+
+/* Right Side */
+
+.right{
+width:45%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+/* Cake */
+
+.cake{
+position:relative;
+width:220px;
+height:220px;
+margin-bottom:20px;
+}
+
+.layer{
+position:absolute;
+width:220px;
+height:70px;
+background:#ff99cc;
+border-radius:20px;
+left:0;
+box-shadow:0 8px 0 #ff4da6;
+}
+
+.layer1{bottom:0;}
+.layer2{
+bottom:70px;
+width:180px;
+left:20px;
+background:#ffb3d9;
+}
+.layer3{
+bottom:140px;
+width:140px;
+left:40px;
+background:#ffd6ea;
+}
+
+.candle{
+position:absolute;
+width:18px;
+height:55px;
+background:white;
+top:15px;
+left:101px;
+border-radius:10px;
+}
+
+.flame{
+position:absolute;
+width:22px;
+height:22px;
+background:gold;
+border-radius:50%;
+top:-15px;
+left:-2px;
+box-shadow:0 0 20px yellow;
+animation:flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.2);
+}
+}
+
+/* Gifts */
+
+.gifts{
+display:flex;
+gap:15px;
+margin-top:25px;
+}
+
+.gift{
+font-size:55px;
+animation:shake 2s infinite;
+cursor:pointer;
+}
+
+@keyframes shake{
+0%,100%{
+transform:rotate(0deg);
+}
+25%{
+transform:rotate(10deg);
+}
+75%{
+transform:rotate(-10deg);
+}
+}
+
+/* Floating Message */
+
+.love-popup{
+position:absolute;
+top:20px;
+right:20px;
+padding:18px 28px;
+background:rgba(255,255,255,0.15);
+border:1px solid rgba(255,255,255,0.3);
+backdrop-filter:blur(10px);
+border-radius:20px;
+font-size:18px;
+display:none;
+animation:popup 1s forwards;
+}
+
+@keyframes popup{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Music Button */
+
+.music{
+position:absolute;
+bottom:20px;
+right:20px;
+padding:15px 25px;
+border:none;
+border-radius:50px;
+background:#ff1493;
+color:white;
+font-size:18px;
+cursor:pointer;
+box-shadow:0 0 20px #ff1493;
+transition:0.3s;
+}
+
+.music:hover{
+transform:scale(1.1);
+}
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+.card{
+width:95%;
+height:90vh;
+}
+
+.back{
+flex-direction:column;
+overflow-y:auto;
+}
+
+.left,.right{
+width:100%;
+text-align:center;
+}
+
+.left h2{
+font-size:45px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- Stars -->
+<script>
+
+for(let i=0;i<120;i++){
+
+let star=document.createElement('div');
+
+star.className='star';
+
+star.style.width=Math.random()*4+'px';
+star.style.height=star.style.width;
+
+star.style.left=Math.random()*100+'vw';
+star.style.top=Math.random()*100+'vh';
+
+star.style.animationDelay=Math.random()*3+'s';
+
+document.body.appendChild(star);
+
+}
+
+</script>
+
+<!-- Hearts -->
+<script>
+
+const hearts=['💖','💕','💗','💞'];
+
+for(let i=0;i<35;i++){
+
+let h=document.createElement('div');
+
+h.className='heart';
+
+h.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+
+h.style.left=Math.random()*100+'vw';
+
+h.style.animationDuration=(Math.random()*8+6)+'s';
+
+h.style.fontSize=(Math.random()*25+15)+'px';
+
+h.style.animationDelay=Math.random()*5+'s';
+
+document.body.appendChild(h);
+
+}
+
+</script>
+
+<div class="container">
+
+<div class="card" id="card">
+
+<!-- FRONT -->
+
+<div class="front">
+
+<h1>Happy 19th Birthday 💖</h1>
+
+<p>To The Most Beautiful Girl In My Life ✨</p>
+
+<button class="open-btn" onclick="openCard()">
+Open Your Surprise 🎁
+</button>
+
+</div>
+
+<!-- BACK -->
+
+<div class="back">
+
+<div class="left">
+
+<h2>My Princess 💕</h2>
+
+<p>
+
+Happy 19th Birthday to the girl who made my world beautiful 💖✨  
+
+You are the reason my heart smiles every single day 🌸  
+Your cute smile feels brighter than stars and your love feels warmer than heaven 💞  
+
+Every moment with you becomes magical ✨  
+Every hug from you feels like home 💗  
+
+Today I just want to remind you how deeply special you are to me 💕  
+You are my peace, my happiness, my favorite person and the most beautiful chapter of my life 💖  
+
+May your life always stay filled with endless smiles, success, love, happiness and all the beautiful dreams you deserve 🌹✨  
+
+I promise to always love you, protect you and stay beside you forever 💗  
+
+I Love You So Much My Duduu 😚💕
+
+</p>
+
+<div class="teddy">🧸💖</div>
+
+</div>
+
+<div class="right">
+
+<!-- Cake -->
+
+<div class="cake">
+
+<div class="layer layer1"></div>
+<div class="layer layer2"></div>
+<div class="layer layer3"></div>
+
+<div class="candle">
+<div class="flame"></div>
+</div>
+
+</div>
+
+<h2 style="font-family:'Great Vibes',cursive;font-size:42px;">
+Make A Birthday Wish ✨
+</h2>
+
+<div class="gifts">
+
+<div class="gift" onclick="showLove()">🎁</div>
+<div class="gift" onclick="showLove()">💝</div>
+<div class="gift" onclick="showLove()">🎀</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Love Popup -->
+
+<div class="love-popup" id="popup">
+💖 Forever Yours My Jalebi 😚💗
+</div>
+
+<!-- Music -->
+
+<button class="music" onclick="playMusic()">
+🎵 Play Love Music
+</button>
+
+<audio id="bgmusic" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8e4b0db.mp3?filename=romantic-love-11786.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function openCard(){
+
+document.getElementById('card').classList.toggle('open');
+
+confetti();
+
+}
+
+function showLove(){
+
+let popup=document.getElementById('popup');
+
+popup.style.display='block';
+
+setTimeout(()=>{
+popup.style.display='none';
+},3500);
+
+confetti();
+
+}
+
+function playMusic(){
+
+document.getElementById('bgmusic').play();
+
+}
+
+/* Confetti */
+
+function confetti(){
+
+for(let i=0;i<120;i++){
+
+let conf=document.createElement('div');
+
+conf.innerHTML=['💖','💕','✨','🎉','💗'][Math.floor(Math.random()*5)];
+
+conf.style.position='fixed';
+
+conf.style.left=Math.random()*100+'vw';
+
+conf.style.top='-20px';
+
+conf.style.fontSize=(Math.random()*25+15)+'px';
+
+conf.style.zIndex='9999';
+
+conf.style.animation=`fall ${Math.random()*3+2}s linear forwards`;
+
+document.body.appendChild(conf);
+
+setTimeout(()=>{
+conf.remove();
+},5000);
+
+}
+
+}
+
+let style=document.createElement('style');
+
+style.innerHTML=`
+
+@keyframes fall{
+
+to{
+
+transform:translateY(110vh) rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+`;
+
+document.head.appendChild(style);
+
+</script>
+
+</body>
+</html>
